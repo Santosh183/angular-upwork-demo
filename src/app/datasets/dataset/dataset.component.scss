@@ -1,0 +1,17 @@
+.dataset-container {
+    padding: 5px;
+    span {
+        font-size: 0.8rem;
+    }
+    fa-icon {
+        display: none;
+        opacity: 0.6;
+        float: right;
+        margin-right: 10px;;
+    }
+}
+.dataset-container:hover {
+    fa-icon {
+        display: inline;
+    }
+}

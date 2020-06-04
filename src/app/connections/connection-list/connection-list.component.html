@@ -1,0 +1,13 @@
+<header>
+    <span>Connections</span>
+    <a [routerLink]="['create']">+ Create</a>
+</header>
+<section class="connection-list">
+    <ng-container *ngFor="let connection of connectionList">
+        <app-connection (editConnection) ="editConnection(connection)" (deleteConnection)="deleteConnection(connection)"
+         [class]="connection.name===connectionService.connection.name?'active':''" (click)="showConnectionDetails(connection)" [connection]="connection"></app-connection>
+    </ng-container>
+</section>
+<section class="side-details">  
+    <router-outlet></router-outlet>
+</section>

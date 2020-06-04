@@ -1,0 +1,95 @@
+<div id="wrapper">
+	<nav id="sidebar" [class.collapsed]="collapsed">
+		<div class="header">
+			<a href="#">
+				<img src="../../../assets/etl-logo.jpg" width="119px" alt="etl logo" class="logoLarge"/>
+				<img src="../../../assets/etl-logo.jpg" width="119px" alt="etl logo" class="logoSmall"/>
+			</a>
+		</div>
+		<span class="divider"></span>
+		<div class="userArea">
+			<div class="userPicture">
+				<img src="../../../assets/profile-carlsen.jpg" alt="profile picture" />
+			</div>
+			<div class="userName">
+				Santosh Kadam
+			</div>
+       		<div class="ui pointing dropdown accountMenu" #myDrop="ngbDropdown"  ngbDropdown >
+				<div ngbDropdownToggle id="dropdownuser"(focus)="myDrop.open()" class="text">
+					<fa-icon [icon]="faCogs" ></fa-icon>					
+				</div>				
+				<div ngbDropdownMenu aria-labelledby="dropdownuser" class="menu" >
+					<div ngbDropdownItem class="item">
+						<fa-icon [icon]="faCogs" ></fa-icon>
+						 Profile
+					</div>
+					<div ngbDropdownItem class="item">
+						<fa-icon [icon]="faSignOutAlt" ></fa-icon>
+						Sign out
+					</div>
+				</div>
+			</div>
+		</div>
+		<span class="divider"></span>
+		<ul class="navigation">
+			<li>
+				<a routerLink="/connections" routerLinkActive="active" >
+					<i>
+						<svg width="20" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.99 43.99">
+							<title>connections@1x</title>
+							<g fill="white" id="Layer_2" data-name="Layer 2">
+								<g id="Web">
+									<g id="Share_2_2x.png" data-name="Share 2@2x.png">
+									<path d="M39,0a5,5,0,0,0-1,9.89V21H26.89a5,5,0,0,0-9.79,0H5a1,1,0,0,0-1,1V34.1a5,5,0,1,0,2,0V23H17.1a5,5,0,0,0,9.79,0H39a1,1,0,0,0,1-1V9.89A5,5,0,0,0,39,0ZM8,39a3,3,0,1,1-3-3A3,3,0,0,1,8,39ZM22,25a3,3,0,1,1,3-3A3,3,0,0,1,22,25ZM39,8a3,3,0,1,1,3-3A3,3,0,0,1,39,8Z"/>
+									</g>
+								</g>
+							</g>
+						</svg>
+					</i>
+					<span>Connections</span>
+				</a>
+			</li>
+			<li>
+				<a routerLink="/mappings" routerLinkActive="active"  >
+					<i>
+						<fa-icon width="20" height="16" [icon]="faExchangeAlt"></fa-icon>
+					</i>
+					<span>Mappings</span>
+				</a>
+			</li>
+			<li>
+				<a routerLink="/datasets" routerLinkActive="active" >
+					<i>
+						<fa-icon width="20" height="16" [icon]="faTable"></fa-icon>
+					</i>
+					<span>DataSets</span>
+				</a>
+			</li>
+			<li>
+				<div class="divider"></div>
+			</li>
+      		<li>
+				<a href="#" ><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Administration</span></a>
+			</li>
+      		<li>
+				<a href="#" ><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"  fill-rule="nonzero"/></svg></i><span>Help & FAQs</span></a>
+			</li>
+		</ul>
+    <div class="expandBtn">
+      <span id="sidebarCollapse">
+		<fa-icon [icon]="collapsed?faAngleDoubleRight:faAngleDoubleLeft" (click)="collapsed = !collapsed"></fa-icon>
+	  </span>
+    </div>
+	</nav>
+	<div id="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<router-outlet></router-outlet>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+

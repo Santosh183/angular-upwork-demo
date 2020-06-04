@@ -1,0 +1,9 @@
+<div  *ngIf="connectionService.connection" class="details-container">
+    <h3>Connection Details</h3>
+    <div class="connection-name">
+        <span>{{connectionService.connection.name}}</span>
+    </div>
+    <div class="connection-description">
+        <span>{{connectionService.connection.description}}</span>
+    </div>
+</div>

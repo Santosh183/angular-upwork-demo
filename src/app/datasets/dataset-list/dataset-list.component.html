@@ -1,0 +1,13 @@
+<header>
+    <span>Datasets</span>
+    <a [routerLink]="['create']">+ Create</a>
+</header>
+<section class="dataset-list">
+    <ng-container *ngFor="let dataset of datasetList">
+        <app-dataset (editDataset) ="editDataset(dataset)" (deleteDataset)="deleteDataset(dataset)"
+         [class]="dataset.name===datasetService.dataset.name?'active':''" (click)="showDatasetDetails(dataset)" [datasetObj]="dataset"></app-dataset>
+    </ng-container>
+</section>
+<section class="side-details">  
+    <router-outlet></router-outlet>
+</section>

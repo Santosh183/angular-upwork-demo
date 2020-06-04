@@ -1,0 +1,35 @@
+<form >
+    <div class="input-container">
+        <label for="name">Name: </label>
+        <input name="name" id="name" disabled [(ngModel)]="datasetService.dataset.name" type="text">
+    </div>
+    <div class="input-container">
+        <label for="description"> Description: </label>
+        <textarea  style="resize: none;" width="12" height="10" name="description" id="description" [(ngModel)]="datasetService.dataset.description" type="text">
+        </textarea>
+    </div>
+    <div class="dataset-fields">
+        <label >Fields: </label>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let field of datasetService.dataset.fields">
+                    <td>{{field.name}}</td>
+                    <td>{{field.type}}</td>
+                    <td><fa-icon [icon]="faTrash"></fa-icon></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="input-container">
+        <button class="btn btn-primary" type="submit"> Save</button>
+        <button class="btn btn-default" type="button"> Cancel</button>
+    </div>
+</form>

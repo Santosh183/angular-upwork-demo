@@ -1,0 +1,29 @@
+<div  *ngIf="datasetService.dataset" class="details-container">
+    <h3>Dataset Details</h3>
+    <div class="dataset-name">
+        <label >Name: </label>
+        <span>{{datasetService.dataset.name}}</span>
+    </div>
+    <div class="dataset-description">
+        <label >Description: </label>
+        <span>{{datasetService.dataset.description}}</span>
+    </div>
+    <div class="dataset-fields">
+        <label >Fields: </label>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let field of datasetService.dataset.fields">
+                    <td>{{field.name}}</td>
+                    <td>{{field.type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

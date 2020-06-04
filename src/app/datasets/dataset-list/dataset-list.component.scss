@@ -1,0 +1,33 @@
+.dataset-list {
+    float: left;
+    width: calc( 50% - 5px );
+    height: calc( 100vh - 70px );
+    overflow: auto;
+    border: 1px solid #e0dddd;
+    padding: 10px 5px;
+    margin: 10px 0px;
+    margin-right: 5px;
+}
+.side-details {
+    border: 1px solid #b1aaaa;
+    float: left;
+    width: calc( 50% - 5px );
+    height: calc( 100vh - 70px );
+    overflow: auto;
+    padding: 10px 5px;
+    margin: 10px 0px;
+    margin-left: 5px;
+    border: 1px solid #e0dddd;
+}
+.side-details::after {
+   clear: both;
+}
+app-dataset {
+    margin: 2px 0px;
+    display: block;
+    background: #e9eff3;
+    cursor: pointer;
+}
+app-dataset.active {
+    background: #a6ceea;
+}

@@ -1,0 +1,13 @@
+<header>
+    <span>Mappings</span>
+    <a [routerLink]="['create']">+ Create</a>
+</header>
+<section class="mapping-list">
+    <ng-container *ngFor="let mapping of mappingList">
+        <app-mapping (editMapping) ="editMapping(mapping)" (deleteMapping)="deleteMapping(mapping)"
+         [class]="mapping.name===mappingService.mapping.name?'active':''" (click)="showMappingDetails(mapping)" [mapping]="mapping"></app-mapping>
+    </ng-container>
+</section>
+<section class="side-details">  
+    <router-outlet></router-outlet>
+</section>

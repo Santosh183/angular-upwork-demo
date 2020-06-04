@@ -1,0 +1,9 @@
+<div class="mapping-container">
+    <span class="map-name">{{mapping.source}}</span>
+    <span class="map-name">
+        <fa-icon class="arrow"  [icon]="faArrowRight" ></fa-icon>
+    </span>
+    <span class="map-name">{{mapping.source}}</span>
+    <fa-icon (click)="deleteMap($event)" [icon]="faTrash" ></fa-icon>
+    <fa-icon (click)="editMap($event)" [icon]="faPencilAlt" ></fa-icon>
+</div>

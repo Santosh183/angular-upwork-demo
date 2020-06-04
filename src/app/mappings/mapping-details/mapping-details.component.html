@@ -1,0 +1,39 @@
+<div  *ngIf="mappingService.mapping" class="details-container">
+    <h3>Mapping Details</h3>
+    <div class="mapping-name">
+        <label >Name: </label>
+        <span>{{mappingService.mapping.name}}</span>
+    </div>
+    <div class="mapping-description">
+        <label >Description: </label>
+        <span>{{mappingService.mapping.description}}</span>
+    </div>
+    <div class="mapping-source">
+        <label >Source Dataset: </label>
+        <span>{{mappingService.mapping.source}}</span>
+    </div>
+    <div class="mapping-target">
+        <label >Target Dataset: </label>
+        <span>{{mappingService.mapping.target}}</span>
+    </div>
+    <div class="mapping-fields">
+        <label >Mapped Fields: </label>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Source Field</th>
+                    <th></th>
+                    <th>Target Field</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let mappedField of mappingService.mapping.mappedFields">
+                    <td>{{mappedField.sourceField}}</td>
+                    <td> <fa-icon class="arrow"  [icon]="faArrowRight" ></fa-icon></td>
+                    <td>{{mappedField.targetField}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
